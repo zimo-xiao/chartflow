@@ -1,0 +1,19 @@
+{
+  "name": "chartflow",
+  "version": "0.0.1",
+  "description": "Statistic tools for reading and generating CSV reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zimo-xiao/chartflow.git"
+  },
+  "author": "Zimo Xiao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zimo-xiao/chartflow/issues"
+  },
+  "homepage": "https://github.com/zimo-xiao/chartflow#readme"
+}
