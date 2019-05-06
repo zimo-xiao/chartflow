@@ -14,7 +14,7 @@ Statistic tools for reading and generating CSV reports
 - **Automation**: designed for large-scale report generating
 
 #### Package Structure
-chartflow is consists of two tools
+there are two sets of tools in chartflow that you need to know
 - **io**: handles read/export CSV files to different formats and data structures
 - **flow**: performs calculation and transformation on the JSON representation of a CSV 
 
@@ -59,6 +59,8 @@ var outputJson = io.csv2Json('students.csv')
     },
 ]
 
+
+
 // returns a map object with string as index and data as value in the form of JSON
 // set student-id as index
 // [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map]
@@ -83,6 +85,8 @@ var outputMap = io.csv2Map('students.csv', 'student ID', filter)
         "ethnicity": "Asian"
     },
 }
+
+
 
 // returns a JSON object with the count as value
 // TODO: doesn't support filter yet
@@ -115,6 +119,8 @@ var countA = root.csv2Count('students.csv', {
         }
 }
 
+
+
 // generate csv from JSON data (format same as the return value of csv2Json)
 var csvData = io.json2CSV(data)
     .trim() // trim whitespace
@@ -136,6 +142,7 @@ var csvData = io.json2CSV(data)
   var output = chartflow.createFlow(data)
     .leaveCol(['UNITID', 'EFTOTLT', 'EFTOTLM', 'EFTOTLW'])
     .deleteCol(['UNITID', 'EFTOTLT'])
+    .deleteRow(0, 100)  // delete row in the range of 0 - 100
     .export();
 ```
 
